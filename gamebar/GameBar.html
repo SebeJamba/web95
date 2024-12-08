@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gamebar.css">
+    <title>GameBar</title>
+</head>
+<body>
+
+    <!-- Header with Toggle Button -->
+    <header>
+        <h3>Settings</h3>
+        <span class="menu-icon" onclick="toggleNav()">&#9776;</span> <!-- Three dashes icon -->
+    </header>
+
+    <!-- Navigation Bar (hidden by default) -->
+    <div id="navbar" class="navbar">
+        <a href="#">General</a>
+        <a href="#">Widgets</a>
+        <a href="#">Shortcuts</a>
+        <a href="#">Personalisation</a>
+        <a href="#">Gaming features</a>
+        <a href="#">Feedback</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Mode 1 Section -->
+        <div class="mode1">
+            <h3>Game Bar Version: 3.24.204.0</h3>
+            <a class="new" href="#">What's new?</a><br>
+            <label for="mode1">Show tips when I start a game
+                <input type="checkbox" id="mode1">
+            </label><br>
+            <a class="new" href="#">explore</a>
+        </div>
+
+        <!-- Mode 2 Section (Fixed structure for Compact Mode) -->
+        <div class="mode2">
+            <label for="slider">Compact mode
+                <input type="checkbox" id="slider">
+            </label>
+        </div>
+
+        <!-- Notifications Section -->
+        <div class="notification">
+            <h3>Notifications</h3>
+            <label for="not1">Ask me for feedback about the app on this device
+                <input type="checkbox" id="not1">
+            </label><br>
+
+            <label for="not2">Silence notification sounds
+                <input type="checkbox" id="not2">
+            </label><br>
+
+            <label for="not3">Hide HDR notifications on this device
+                <input type="checkbox" id="not3">
+            </label><br>
+
+            <label for="not4">Hide notifications when I'm playing a fullscreen game
+                <input type="checkbox" id="not4">
+            </label>
+        </div>
+    </div>
+
+    <footer>
+        <a href="#">&copy; 2024 Privacy Statement</a><br>
+        <a href="#">Edit more preferences in Windows Settings</a>
+    </footer>
+
+    <!-- JavaScript to toggle the navbar -->
+    <script>
+        function toggleNav() {
+            var navbar = document.getElementById("navbar");
+            if (navbar.style.display === "block") {
+                navbar.style.display = "none";
+            } else {
+                navbar.style.display = "block";
+            }
+        }
+
+        // Close the navbar if user clicks outside of it
+        document.addEventListener('click', function(event) {
+            var navbar = document.getElementById("navbar");
+            var menuIcon = document.querySelector(".menu-icon");
+
+            // If the click is outside the navbar and not on the menu icon
+            if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+                navbar.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
